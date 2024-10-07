@@ -13,7 +13,7 @@ object Form1: TForm1
   OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel
-    Left = 120
+    Left = 96
     Top = 32
     Width = 34
     Height = 15
@@ -24,7 +24,7 @@ object Form1: TForm1
     Top = 160
     Width = 75
     Height = 25
-    Caption = 'ButtonPlay'
+    Caption = 'Button1'
     TabOrder = 0
     OnClick = Button1Click
   end
@@ -33,12 +33,12 @@ object Form1: TForm1
     Top = 160
     Width = 75
     Height = 25
-    Caption = 'ButtonStop'
+    Caption = 'Button2'
     TabOrder = 1
     OnClick = Button2Click
   end
   object ComboBox1: TComboBox
-    Left = 128
+    Left = 96
     Top = 80
     Width = 145
     Height = 23
