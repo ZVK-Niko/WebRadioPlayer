@@ -1,48 +1,42 @@
 object Form1: TForm1
-  Left = 0
-  Top = 0
-  Caption = 'Form1'
-  ClientHeight = 433
-  ClientWidth = 622
+  Left = 1033
+  Top = 327
+  Caption = 'Web Radio Player'
+  ClientHeight = 94
+  ClientWidth = 391
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -12
-  Font.Name = 'Segoe UI'
+  Font.Height = -11
+  Font.Name = 'Tahoma'
   Font.Style = []
+  Position = poDesigned
+  OnClose = FormClose
   OnCreate = FormCreate
-  TextHeight = 15
-  object Label1: TLabel
-    Left = 96
-    Top = 32
-    Width = 34
-    Height = 15
-    Caption = 'Label1'
+  TextHeight = 13
+  object ComboBox1: TComboBox
+    Left = 16
+    Top = 16
+    Width = 360
+    Height = 21
+    TabOrder = 0
   end
   object Button1: TButton
-    Left = 96
-    Top = 160
+    Left = 16
+    Top = 48
     Width = 75
     Height = 25
-    Caption = 'Button1'
-    TabOrder = 0
+    Caption = 'Play'
+    TabOrder = 1
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 216
-    Top = 160
+    Left = 104
+    Top = 48
     Width = 75
     Height = 25
-    Caption = 'Button2'
-    TabOrder = 1
-    OnClick = Button2Click
-  end
-  object ComboBox1: TComboBox
-    Left = 96
-    Top = 80
-    Width = 145
-    Height = 23
+    Caption = 'Stop'
     TabOrder = 2
-    Text = 'ComboBox1'
+    OnClick = Button2Click
   end
 end

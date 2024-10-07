@@ -29,7 +29,6 @@ type
     ComboBox1: TComboBox;
     Button1: TButton;
     Button2: TButton;
-    Label1: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -208,8 +207,21 @@ begin
   // Cancel the download thread if running
   if Assigned(DownloadThread) then
   begin
-    DownloadThread.Cancel;
-    DownloadThread.WaitFor;  // Wait for the thread to finish
+    try
+      DownloadThread.Cancel; // Signal the thread to cancel
+
+      // Wait for the thread to finish (no timeout support in Delphi)
+      if not DownloadThread.Finished then
+      begin
+        DownloadThread.WaitFor;  // Wait for the thread to finish
+      end;
+    except
+      on E: Exception do
+      begin
+        // Log and handle any exceptions
+        OutputDebugString(PChar('Error waiting for thread: ' + E.Message));
+      end;
+    end;
   end;
 
   // Stop and free any active streams
@@ -223,5 +235,7 @@ begin
   BASS_Free; // Free BASS resources
 end;
 
-end.
 
+
+
+end.
